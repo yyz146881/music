@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://ych.zcguard.com/xxgccc -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小🍉冲冲冲 v: xxxg1717</title>
+  <style>
+    @keyframes rainbow {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes bgPulse {
+      0% {
+        background-size: 100% 100%;
+        filter: hue-rotate(0deg);
+      }
+      50% {
+        background-size: 120% 120%;
+        filter: hue-rotate(180deg);
+      }
+      100% {
+        background-size: 100% 100%;
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes marquee {
+      0% { 
+        transform: translateX(100%); 
+      }
+      100% { 
+        transform: translateX(-100%); 
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .marquee-container {
+      background: linear-gradient(45deg, #ff3366, #ba2c95, #4169e1);
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      color: white;
+      white-space: nowrap;
+      animation: marquee 25s linear infinite;
+      will-change: transform;
+    }
+
+    .search-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .dynamic-bg-title {
+      background: radial-gradient(circle at center, #ff3366, #ba2c95, #4169e1) !important;
+      background-size: 120% 120% !important;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      animation: bgPulse 8s infinite ease-in-out !important;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .dynamic-bg-title::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 50%
+      );
+      animation: rotate 10s linear infinite;
+    }
+
+    .search-form {
+      padding: 20px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #eee;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .search-button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #ff3366, #ba2c95, #4169e1);
+      background-size: 200% auto;
+      animation: rainbow 6s linear infinite;
+    }
+
+    .promotional-image {
+      width: 70%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .custom-top-text {
+      text-align: center;
+      margin: 20px auto;
+      padding: 12px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+      width: 80%;
+      background: white;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(90deg,
+        #ff1a1a,
+        #ff3366,
+        #4169e1,
+        #ff1a1a
+      );
+      background-size: 300% 100%;
+      animation: textGradient 6s linear infinite;
+    }
+
+    .custom-text {
+      text-align: center;
+      margin: 20px auto;
+      padding: 12px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+      width: 80%;
+      background: white;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(90deg,
+        #ff1a1a,
+        #ff3366,
+        #4169e1,
+        #ff1a1a
+      );
+      background-size: 300% 100%;
+      animation: textGradient 6s linear infinite;
+    }
+
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      const marqueeText = document.querySelector('.marquee-text');
+      
+      // 监听动画结束
+      marqueeText.addEventListener('animationend', () => {
+        // 移除当前动画
+        marqueeText.style.animation = 'none';
+        
+        // 强制浏览器重排
+        marqueeText.offsetHeight;
+        
+        // 重新添加动画
+        marqueeText.style.animation = 'marquee 20s linear infinite';
+      });
+
+      // 初始化时检查是否需要显示验证码
+      try {
+        // 构建验证码预请求URL
+        const currentPath = window.location.pathname;
+        const isXjbDomain = window.location.hostname === 'ych.zcguard.com';
+        const pathSegments = currentPath.split('/');
+        
+        let testUrl = '';
+        if (isXjbDomain && pathSegments.length > 1) {
+          testUrl = '/' + pathSegments[1];
+        }
+        testUrl += '/concert-result?artist=test';
+        
+        const testResponse = await fetch(testUrl);
+        if (testResponse.status === 400 && await testResponse.text() === '请输入验证码') {
+          await showCaptcha();
+        }
+      } catch (error) {
+        console.error('检查验证码状态失败:', error);
+      }
+
+      // 初始化验证码相关事件监听
+      document.querySelector('.search-button').addEventListener('click', handleSearch);
+    });
+
+    async function showCaptcha() {
+      try {
+        const captchaContainer = document.getElementById('captchaContainer');
+        const captchaImage = document.getElementById('captchaImage');
+        
+        if (captchaContainer && captchaImage) {
+          captchaContainer.style.display = 'block';
+          captchaImage.style.display = 'none';
+          await refreshCaptcha();
+          captchaImage.style.display = 'block';
+        }
+      } catch (error) {
+        console.error('显示验证码失败:', error);
+        alert('加载验证码失败，请刷新页面重试');
+      }
+    }
+
+    async function refreshCaptcha() {
+      try {
+        const currentPath = window.location.pathname;
+        const isXjbDomain = window.location.hostname === 'ych.zcguard.com';
+        const pathSegments = currentPath.split('/');
+        
+        let url = '';
+        if (isXjbDomain && pathSegments.length > 1) {
+          url = '/' + pathSegments[1];
+        }
+        url += '/captcha';
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('获取验证码失败');
+        }
+        const data = await response.json();
+        if (!data.image) {
+          throw new Error('验证码图片数据无效');
+        }
+        const captchaImage = document.getElementById('captchaImage');
+        captchaImage.onerror = () => {
+          console.error('验证码图片加载失败');
+          alert('验证码图片加载失败，请点击图片重试');
+        };
+        captchaImage.src = data.image;
+        captchaImage.onclick = refreshCaptcha;
+      } catch (error) {
+        console.error('获取验证码失败:', error);
+        throw error;
+      }
+    }
+
+    async function handleSearch(e) {
+      e.preventDefault();
+      
+      const searchInput = document.getElementById('searchInput').value;
+      
+      if (!searchInput.trim()) {
+        alert('请输入歌手/城市名称');
+        return;
+      }
+
+      const currentPath = window.location.pathname;
+      const isXjbDomain = window.location.hostname === 'ych.zcguard.com';
+      const pathSegments = currentPath.split('/');
+      
+      // 构建查询URL时保留完整的原始路径
+      let url = '';
+      if (isXjbDomain && pathSegments.length > 1) {
+        url = '/' + pathSegments[1];
+      }
+      url += '/concert-result?artist=' + encodeURIComponent(searchInput);
+      const captchaInput = document.getElementById('captchaInput');
+      if (captchaInput && captchaInput.value) {
+        url += '&captcha=' + encodeURIComponent(captchaInput.value);
+      }
+
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        
+        if (response.status === 400 && text === '请输入验证码') {
+          await showCaptcha();
+          alert('请输入验证码');
+        } else if (response.ok) {
+          window.location.href = url;
+        } else {
+          alert(text || '查询失败，请稍后重试');
+        }
+      } catch (error) {
+        console.error('查询失败:', error);
+        alert('查询失败，请稍后重试');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="marquee-container">
+      <div class="marquee-text">
+        2025全国演唱会城市查询 | 热门演唱会：张惠妹 | 周深 | 林俊杰 | 汪苏泷 | 王心凌 | 陶喆 | 毛不易 | 谢霆锋 | 邓紫棋 | 周杰伦 | 刀郎 | 张杰 | 华晨宇 | 许嵩 | 刘德华 | 【科小猴】
+      </div>
+    </div>
+
+    <div class="search-card">
+      <!-- 1. 标题 -->
+      <div class="dynamic-bg-title">
+        <div style="text-align: center; padding: 20px; font-size: 24px; font-weight: bold; color: white;">
+          2025全国演唱会城市查询
+        </div>
+      </div>
+
+      <!-- 2. 自定义顶部文字 -->
+      <div class="custom-top-text"></div>
+
+      <!-- 3. 自定义图片 -->
+      <img src="weixin.jpg" class="promotional-image" alt="演唱会宣传图">
+      
+      <!-- 3. 自定义文字 -->
+      <div class="custom-text">kexiaohou666</div>
+
+      <!-- 4. 搜索框 -->
+      <div class="search-form">
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="请输入歌手名称或城市名称" id="searchInput" required="">
+          <div id="captchaContainer" style="margin-bottom: 15px; display: none;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="text" id="captchaInput" class="search-input" placeholder="请输入验证码" style="margin: 0; flex: 1;">
+              <img id="captchaImage" src="http://ych.zcguard.com/xxgccc" alt="验证码" style="display: none; height: 46px; cursor: pointer;">
+            </div>
+          </div>
+          <button type="submit" class="search-button">查询</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body></html>
